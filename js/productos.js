@@ -1,9 +1,19 @@
+function cargarProductosDesdeLocalStorage() {
+    let carritoLocalStorage = [];
+    if (localStorage.length != 0) {
+        carritoLocalStorage = JSON.parse(localStorage.getItem("carrito"));
+    }
+    return carritoLocalStorage;
+}
+
+
 verCarrito.addEventListener("click", () => {
+    const seccionProductos = document.getElementById("productos");
     seccionProductos.innerHTML = "";
+    const carrito = cargarProductosDesdeLocalStorage()
     for (const item of carrito) {
         let cardCarrito = document.createElement("div.col");
         cardCarrito.innerHTML = `<div class="card h-100">
-                            <img src="${item.img}" class="card-img-top" alt="${item.nombre}">
                             <div class="card-body">
                                 <h5 class="card-title">${item.nombre}</h5>
                                 <p class="card-text text-dark">$${item.precio}</p>
@@ -27,6 +37,7 @@ localStorage.setItem("carrito", JSON.stringify(productos));
 
 
 
+
 let usuario;
 let usuarioStorage = localStorage.getItem("usuario");
 
@@ -37,3 +48,5 @@ if (usuarioStorage) {
     usuario = prompt("Ingresa tu nombre");
     localStorage.setItem("usuario", usuario);
 }
+
+
