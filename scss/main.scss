@@ -1,0 +1,568 @@
+$border-general: solid 2px white;
+
+@import "bootstrap/bootstrap.scss";
+@import "proyecto/compilado.scss";
+
+.container {
+    text-align: center;
+    color: white;
+    background-color: #021e2e;
+    padding: 3px;
+
+    display: grid;
+
+    grid-template-areas:
+        "header header header"
+        "nav nav nav"
+        "main main main"
+        "aside aside aside"
+        "footer footer footer"
+    ;
+
+}
+
+header,
+nav,
+main,
+aside,
+footer {
+    border: $border-general;
+}
+
+/* achicar para mobile */
+
+img {
+    width: 100px;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav {
+    grid-area: nav;
+}
+
+main {
+    grid-area: main;
+}
+
+aside {
+    grid-area: aside;
+}
+
+footer {
+    grid-area: footer;
+}
+
+.header {
+    color: white;
+    background-color: black;
+}
+
+.navigation {
+    background-color: black;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    a {
+        display: block;
+        margin: 0 0 0 1px;
+        padding: 0.9rem;
+        transition: all 0.4 linear;
+        border-radius: 5px;
+        color: white;
+        text-decoration: none;
+    }
+
+    a:hover {
+        background: #1871a5;
+    }
+}
+
+.preparativos {
+    text-align: center;
+    color: white;
+    font-size: 25px;
+    font-family: 'Alata', sans-serif;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-family: 'Changa', sans-serif;
+}
+
+main {
+    text-align: center;
+}
+
+.div-resaltador {
+    background-color: rgb(0, 131, 131);
+    text-align: center;
+}
+
+.main-variedades {
+    width: 100%;
+}
+
+@mixin size ($alto, $ancho, $margin) {
+    padding: 1rem;
+    width: 33%;
+    margin: 0px auto;
+
+
+    .item-1 {
+        padding: $alto;
+        width: $ancho;
+        margin: $margin;
+    }
+
+    .item-2 {
+        padding: $alto;
+        width: $ancho;
+        margin: $margin;
+    }
+
+
+    .item-3 {
+        padding: $alto;
+        width: $ancho;
+        margin: $margin;
+        text-align: center;
+
+    }
+
+}
+
+@media screen and (min-width:768px) {
+    header {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    .navigation ul li a {
+        margin: 0 0 0 75px;
+        padding: 0.8rem;
+        transition: all 0.4 linear;
+        border-radius: 5px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .container {
+        text-align: center;
+        color: white;
+        background-color: #8BD3CB;
+        padding: 3px;
+
+        display: grid;
+
+        grid-template-areas:
+            "header header header"
+            "nav nav nav"
+            "main main aside"
+            "footer footer footer";
+
+    }
+
+    .main-variedades {
+        width: 100%;
+        display: flex;
+    }
+
+    .item-1 {
+        padding: 1rem;
+        width: 33%;
+    }
+
+    .item-2 {
+        @extend .item-1;
+    }
+
+    .item-3 {
+        @extend .item-1;
+        text-align: none;
+    }
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1rem;
+}
+
+/* Just for the fallback layout */
+
+main {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+article {
+    margin: 1rem 0;
+}
+
+.us-deals {
+    .sale-item {
+
+        display: flex;
+        flex-flow: column;
+        flex-direction: c;
+        justify-content: center;
+        border: 3px solid black;
+        border-radius: 1rem;
+        padding: 2rem;
+        background-image: url(../img/fondi.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        backface-visibility: initial;
+        color: white;
+        font-family: 'Alata', sans-serif;
+        font-family: 'Changa', sans-serif;
+        font-weight: bold;
+        opacity: 0.9;
+    }
+}
+
+.sale-item-nosotros>img {
+    order: -1;
+    align-self: center;
+
+    border-style: inset;
+    border-radius: 10px 100px 10px;
+    margin-top: 300px;
+}
+
+/* Now lets do a Grid-based layout */
+
+@supports (display: grid) {
+    main {
+        max-width: 10000px;
+        margin: 0;
+    }
+
+    article {
+        margin: 0;
+    }
+
+    .us-deals {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-gap: 1rem;
+    }
+}
+
+.deals {
+    display: flex;
+    flex-wrap: wrap;
+    font-family: Avenir, Roboto, Helvetica, san-serif;
+    font-size: 80%;
+}
+
+.sale-item {
+    flex: 50%;
+    justify-content: center;
+    border: 3px solid black;
+    border-radius: 1rem;
+    padding: 2rem;
+    background-image: url(../img/fondi.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    backface-visibility: initial;
+    color: white;
+    font-family: 'Alata', sans-serif;
+    font-family: 'Changa', sans-serif;
+    font-weight: bold;
+    opacity: 0.9;
+
+
+}
+
+.sale-item>h1 {
+    margin: 1rem 1rem 0;
+}
+
+.sale-item>h4 {
+    font-weight: bold;
+}
+
+.sale-item>ul {
+    margin: 0 0 1rem;
+}
+
+.sale-item>p {
+    margin: 1.25em 1rem 1rem;
+    font-size: 21px;
+    color: black;
+}
+
+.sale-item>img {
+    order: -1;
+    align-self: center;
+    border-style: inset;
+    border-radius: 100px 100px 50px;
+}
+
+.sale-item .logo-inicio {
+    width: 255px !important;
+    border: none;
+    border-radius: 0px 0px 0px;
+}
+
+.sale-item>.button {
+    margin-top: auto;
+    background: rgb(0, 131, 131);
+    color: white;
+    padding: 0.4rem;
+    border: 1px transparent white;
+    border-radius: 1rem;
+    font-size: 1.3rem;
+}
+
+.sale-item img {
+    width: 250px;
+}
+
+.item-1 {
+    padding: 6px 6px;
+    display: inline-block;
+
+}
+
+.item-2 {
+    padding: 6px;
+    float: left;
+}
+
+.item-3 {
+    padding: 6px;
+    float: left;
+}
+
+.item-4 {
+    padding: 6px;
+    float: left;
+}
+
+.rounded-full {
+    border-radius: 9999px;
+    width: 180px;
+}
+
+.resaltador {
+    background-color: #ffffff;
+    text-align: center;
+    color: #000000;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+    position: relative;
+    margin-bottom: 30px;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(90, 97, 105, 0.1), 0 0.9375rem 1.40625rem rgba(90, 97, 105, 0.1), 0 0.25rem 0.53125rem rgba(90, 97, 105, 0.12), 0 0.125rem 0.1875rem rgba(90, 97, 105, 0.1);
+}
+
+.l-bg-cherry {
+    background: linear-gradient(to right, #493240, #f09) !important;
+    color: #fff;
+}
+
+.l-bg-blue-dark {
+    background: linear-gradient(to right, #373b44, #4286f4) !important;
+    color: #fff;
+}
+
+.l-bg-green-dark {
+    background: linear-gradient(to right, #0a504a, #38ef7d) !important;
+    color: #fff;
+}
+
+.l-bg-orange-dark {
+    background: linear-gradient(to right, #a86008, #ffba56) !important;
+    color: #fff;
+}
+
+.card .card-statistic-3 .card-icon-large .fas,
+.card .card-statistic-3 .card-icon-large .far,
+.card .card-statistic-3 .card-icon-large .fab,
+.card .card-statistic-3 .card-icon-large .fal {
+    font-size: 110px;
+}
+
+
+
+.whatsapp {
+    position: fixed;
+    width: 43px;
+    height: 50px;
+    bottom: 54px;
+    right: 110px;
+    color: #FFF;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 30px;
+    z-index: 100;
+}
+
+.whatsapp-icon {
+    margin-top: 13px;
+}
+
+.item-container {
+    text-align: center;
+    width: 100%;
+}
+
+.carousel-inner {
+    width: 32%;
+    margin: 0px auto;
+}
+
+h5,
+.h5 {
+    color: black;
+}
+
+.carousel-indicators .button {
+    color: wheat !important;
+    background-color: white !important;
+}
+
+h1 {
+    text-align: center;
+}
+
+.cards {
+    display: flex;
+    justify-content: space-between;
+    color: black;
+    margin-top: 150px;
+
+}
+
+$cards: (
+    1: green,
+    2: red,
+    row 3: blue,
+);
+
+@each $number,
+$color in $cards {
+    .card_#{$number} {
+        background-color: ($color);
+    }
+}
+
+h2,
+.h2 {
+    font-size: calc(0.555rem + 0.9vw) !important;
+}
+
+@media (min-width: 1200px) {
+
+    h2,
+    .h2 {
+        font-size: 2rem;
+    }
+}
+
+.p-4 {
+    padding: 2.5rem !important;
+}
+
+.row {
+    --bs-gutter-x: 1.5rem;
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(-1 * var(--bs-gutter-y));
+    margin-right: calc(-.5 * var(--bs-gutter-x));
+    margin-left: calc(-.5 * var(--bs-gutter-x));
+}
+
+.row>* {
+    flex-shrink: 0;
+    width: 155% !important;
+    max-width: 100%;
+    padding-right: calc(var(--bs-gutter-x) * .5);
+    padding-left: calc(var(--bs-gutter-x) * .5);
+    margin-top: var(--bs-guztter-y);
+}
+
+carousel-caption {
+    h5 {
+        color: white !important;
+    }
+}
+
+.imagenes-demostrativas {
+    width: 200px;
+    height: 133px;
+}
+
+h3 {
+    color: #FB925B;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.sale-item-nosotros {
+    display: flex;
+    flex-flow: column;
+    border: 3px solid black;
+    border-radius: 1rem;
+    padding: 2rem;
+    background-color: rgb(255, 255, 255);
+    backface-visibility: initial;
+    color: white;
+    font-family: 'Alata', sans-serif;
+    font-family: 'Changa', sans-serif;
+    font-weight: bold;
+    opacity: 0.8;
+}
+
+.sale-item-nosotros>h1 {
+    margin: 1rem 1rem 0;
+}
+
+.sale-item-nosotros>h4 {
+    font-weight: bold;
+}
+
+.sale-item-nosotros>ul {
+    margin: 0 0 1rem;
+}
+
+.sale-item-nosotros>p {
+    margin: 1.25em 1rem 1rem;
+    font-size: 18px;
+    font-weight: bold;
+    -webkit-text-stroke: 1px rgb(28, 24, 24);
+}
+
+.sale-item-nosotros>img {
+    order: -1;
+    align-self: center;
+
+    border-style: inset;
+    border-radius: 10px 100px 10px;
+    margin-top: 100px;
+}
+
+.sale-item-nosotros img {
+    width: 250px;
+}

@@ -1,0 +1,30 @@
+.footer-distributed {
+    background-color: #000000;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.12);
+    box-sizing: border-box;
+    width: 100%;
+    text-align: left;
+    font: normal 16px sans-serif;
+    padding: 45px 50px;
+
+        .footer-left p {
+            color: #8f9296;
+            font-size: 14px;
+            margin: 0;
+        }
+
+            .footer-right {
+                float: right;
+                margin-top: 6px;
+                max-width: 100%;
+
+                img {
+                     width: 50px;
+                     display: inline-block;
+                     border-radius: 2px;
+                     text-align: center;
+                     margin-left: 3px;
+                }
+            }
+
+  }

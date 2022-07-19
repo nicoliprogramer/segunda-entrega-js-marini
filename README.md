@@ -1,1 +1,1 @@
-# segunda-entrega-js-marini
+# tercera-entrega-marini
