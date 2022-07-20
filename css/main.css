@@ -8372,7 +8372,7 @@ textarea.form-control-lg {
   background-color: #021e2e;
   padding: 3px;
   display: grid;
-  grid-template-areas: "header header header" "nav nav nav" "main main main" "aside aside aside" "footer footer footer"; }
+  grid-template-areas: "header header header" "nav nav nav" "main main main" "aside aside aside" "footer footer footer"; }
 
 header,
 nav,
@@ -8462,7 +8462,7 @@ main {
     background-color: #8BD3CB;
     padding: 3px;
     display: grid;
-    grid-template-areas: "header header header" "nav nav nav" "main main aside" "footer footer footer"; }
+    grid-template-areas: "header header header" "nav nav nav" "main main aside" "footer footer footer"; }
   .main-variedades {
     width: 100%;
     display: flex; }
@@ -8765,3 +8765,6 @@ h3, .h3 {
 
 .sale-item-nosotros img {
   width: 250px; }
+
+.cart-img {
+  width: 100px; }
